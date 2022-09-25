@@ -26,16 +26,16 @@ public final class WeatherService: NSObject {
             .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
                 guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) {data, response, error in guard error == nil, let data = data else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil, let data = data else { return }
             if let response = try? JSONDecoder().decode(APIResponse.self, from: data) {
-                self.completionHandler?(Weather(response: response))
+                self.completionHandler?(weather(response: response))
             }
         }.resume()
     }
-    
 }
 
-struct APIResponse {
+struct APIResponse: Decodable {
     let name: String
     let main : APIMain
     let weather: [APIWeather]

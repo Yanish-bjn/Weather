@@ -10,15 +10,25 @@ import SwiftUI
 
 struct WeatherView: View {
     var body: some View {
-        Text("Hello world!")
-            .padding()
+        VStack {
+            Text("Paris")
+                .font(.largeTitle)
+                .padding()
+        Text("25°C")
+                .font(.system(size: 70))
+                .bold()
+        Text("☁️")
+                .font(.largeTitle)
+                .padding()
+        Text("Ciel clear")
+        }
     }
 }
 
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            WeatherView()
         }
     }
 
