@@ -13,6 +13,7 @@
 		9C6F32C628DF1C2000BB0FC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F32C528DF1C2000BB0FC5 /* Preview Assets.xcassets */; };
 		9CAB94D628DF3B3900B41BE5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */; };
 		9CAB94D828DF3D2000B41BE5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D728DF3D2000B41BE5 /* Weather.swift */; };
+		9CAB94DA28E06FA300B41BE5 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		9CAB94D428DF29F100B41BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		9CAB94D728DF3D2000B41BE5 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				9C6F32BD28DF1C1E00BB0FC5 /* WeatherApp.swift */,
 				9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */,
 				9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */,
+				9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */,
 				9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */,
 				9C6F32C328DF1C2000BB0FC5 /* Weather.entitlements */,
 				9C6F32C428DF1C2000BB0FC5 /* Preview Content */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CAB94DA28E06FA300B41BE5 /* WeatherViewModel.swift in Sources */,
 				9CAB94D828DF3D2000B41BE5 /* Weather.swift in Sources */,
 				9C6F32C028DF1C1E00BB0FC5 /* WeatherView.swift in Sources */,
 				9CAB94D628DF3B3900B41BE5 /* WeatherService.swift in Sources */,
@@ -272,6 +276,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Weather/Weather.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Weather/Preview Content\"";
@@ -296,6 +301,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Yanish.Weather;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = yanish.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -311,6 +317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Weather/Weather.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Weather/Preview Content\"";
@@ -335,6 +342,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Yanish.Weather;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = yanish.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

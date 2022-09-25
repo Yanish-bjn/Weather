@@ -15,6 +15,11 @@ public final class WeatherService: NSObject {
     private let API_KEY = "cfc72d5e10d0a5e16fc549384f92bfcb"
     private var completionHandler: ((weather) -> Void)?
     
+    public override init() {
+        super.init()
+        locationManager.delegate = self
+    }
+    
     public func loadWeatherData(_ completionHandler: @escaping((weather) -> Void)) {
         self.completionHandler = completionHandler
         locationManager.requestAlwaysAuthorization()
@@ -22,7 +27,7 @@ public final class WeatherService: NSObject {
     }
     //https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
     private func makeDataRequest(forCoordinates coordinates: CLLocationCoordinate2D) {
-        guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metrics"
+        guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metric"
             .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
                 guard let url = URL(string: urlString) else { return }
         
@@ -32,6 +37,24 @@ public final class WeatherService: NSObject {
                 self.completionHandler?(weather(response: response))
             }
         }.resume()
+    }
+}
+
+
+extension WeatherService: CLLocationManagerDelegate {
+    public func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]
+    ) {
+    guard let location = locations.first else { return }
+    makeDataRequest(forCoordinates: location.coordinate)
+    }
+
+    public func locationManager (
+        _ manager: CLLocationManager,
+        didFailWithError error: Error
+    ) {
+        print("Quelque chose ne va pas: \(error.localizedDescription)")
     }
 }
 
