@@ -10,7 +10,6 @@
 		9C6F32BE28DF1C1E00BB0FC5 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F32BD28DF1C1E00BB0FC5 /* WeatherApp.swift */; };
 		9C6F32C028DF1C1E00BB0FC5 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */; };
 		9C6F32C228DF1C2000BB0FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */; };
-		9C6F32C628DF1C2000BB0FC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F32C528DF1C2000BB0FC5 /* Preview Assets.xcassets */; };
 		9CAB94D628DF3B3900B41BE5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */; };
 		9CAB94D828DF3D2000B41BE5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D728DF3D2000B41BE5 /* Weather.swift */; };
 		9CAB94DA28E06FA300B41BE5 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */; };
@@ -22,11 +21,11 @@
 		9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C6F32C328DF1C2000BB0FC5 /* Weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather.entitlements; sourceTree = "<group>"; };
-		9C6F32C528DF1C2000BB0FC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CAB94D428DF29F100B41BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		9CAB94D728DF3D2000B41BE5 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		9CAB952928E4555100B41BE5 /* Diagramme de classe weather.drawio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diagramme de classe weather.drawio.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +66,17 @@
 				9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */,
 				9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */,
 				9C6F32C328DF1C2000BB0FC5 /* Weather.entitlements */,
-				9C6F32C428DF1C2000BB0FC5 /* Preview Content */,
+				9CAB952828E4555100B41BE5 /* PreviewContent */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
 		};
-		9C6F32C428DF1C2000BB0FC5 /* Preview Content */ = {
+		9CAB952828E4555100B41BE5 /* PreviewContent */ = {
 			isa = PBXGroup;
 			children = (
-				9C6F32C528DF1C2000BB0FC5 /* Preview Assets.xcassets */,
+				9CAB952928E4555100B41BE5 /* Diagramme de classe weather.drawio.png */,
 			);
-			path = "Preview Content";
+			path = PreviewContent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C6F32C628DF1C2000BB0FC5 /* Preview Assets.xcassets in Resources */,
 				9C6F32C228DF1C2000BB0FC5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +277,6 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Weather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
@@ -320,7 +317,6 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Weather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
