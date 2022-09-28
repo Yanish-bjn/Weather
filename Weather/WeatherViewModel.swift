@@ -10,23 +10,23 @@ import Foundation
 private let defaultIcon = ""
 private let iconMap = [
     
-    "Drizzle" : "🌨",
+    "Brouillard" : "🌨",
     
-    "Thunderstorm" : "⛈",
+    "Orageux" : "⛈",
     
-    "Rain": "🌧",
+    "Averses": "🌧",
     
-    "Snow": "❄️",
+    "Neigeux": "❄️",
     
-    "Clear": "☀️",
+    "Belles éclaircies": "☀️",
     
-    "Clouds" : "☁️",
+    "Nuageux" : "☁️",
 
 ]
 
 
 public class WeatherViewModel: ObservableObject {
-    @Published var cityName: String = "City Name"
+    @Published var cityName: String = "Nom de la ville"
     @Published var temperature: String = "--"
     @Published var weatherDescription: String = "--"
     @Published var weatherIcon: String = defaultIcon
