@@ -10,6 +10,9 @@
 		9C6F32BE28DF1C1E00BB0FC5 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F32BD28DF1C1E00BB0FC5 /* WeatherApp.swift */; };
 		9C6F32C028DF1C1E00BB0FC5 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */; };
 		9C6F32C228DF1C2000BB0FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */; };
+		9C9504CD28E8526F00FF919A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9504CC28E8526F00FF919A /* LocationManager.swift */; };
+		9C9504D028E854CC00FF919A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9504CF28E854CC00FF919A /* WelcomeView.swift */; };
+		9C9504D228E8687000FF919A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9504D128E8687000FF919A /* LoadingView.swift */; };
 		9CAB94D628DF3B3900B41BE5 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */; };
 		9CAB94D828DF3D2000B41BE5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D728DF3D2000B41BE5 /* Weather.swift */; };
 		9CAB94DA28E06FA300B41BE5 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */; };
@@ -21,6 +24,9 @@
 		9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C6F32C328DF1C2000BB0FC5 /* Weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weather.entitlements; sourceTree = "<group>"; };
+		9C9504CC28E8526F00FF919A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9C9504CF28E854CC00FF919A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		9C9504D128E8687000FF919A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9CAB94D428DF29F100B41BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		9CAB94D728DF3D2000B41BE5 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -59,9 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				9CAB94D428DF29F100B41BE5 /* Info.plist */,
+				9C9504CE28E853E800FF919A /* Views */,
+				9C9504CB28E8523D00FF919A /* Managers */,
 				9CAB94D728DF3D2000B41BE5 /* Weather.swift */,
 				9C6F32BD28DF1C1E00BB0FC5 /* WeatherApp.swift */,
-				9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */,
 				9CAB94D528DF3B3900B41BE5 /* WeatherService.swift */,
 				9CAB94D928E06FA300B41BE5 /* WeatherViewModel.swift */,
 				9C6F32C128DF1C2000BB0FC5 /* Assets.xcassets */,
@@ -69,6 +76,24 @@
 				9CAB952828E4555100B41BE5 /* PreviewContent */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		9C9504CB28E8523D00FF919A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9C9504CC28E8526F00FF919A /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9C9504CE28E853E800FF919A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F32BF28DF1C1E00BB0FC5 /* WeatherView.swift */,
+				9C9504CF28E854CC00FF919A /* WelcomeView.swift */,
+				9C9504D128E8687000FF919A /* LoadingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9CAB952828E4555100B41BE5 /* PreviewContent */ = {
@@ -150,9 +175,12 @@
 			files = (
 				9CAB94DA28E06FA300B41BE5 /* WeatherViewModel.swift in Sources */,
 				9CAB94D828DF3D2000B41BE5 /* Weather.swift in Sources */,
+				9C9504CD28E8526F00FF919A /* LocationManager.swift in Sources */,
 				9C6F32C028DF1C1E00BB0FC5 /* WeatherView.swift in Sources */,
 				9CAB94D628DF3B3900B41BE5 /* WeatherService.swift in Sources */,
+				9C9504D228E8687000FF919A /* LoadingView.swift in Sources */,
 				9C6F32BE28DF1C1E00BB0FC5 /* WeatherApp.swift in Sources */,
+				9C9504D028E854CC00FF919A /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,17 +305,19 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CQBJBS9ZAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "WeatherApp reuires your location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "WeatherApp requires your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weatherapp require your location";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -297,8 +327,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Yanish.Weather;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = yanish.weather;
+				PRODUCT_BUNDLE_IDENTIFIER = Yanish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -317,17 +346,19 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CQBJBS9ZAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "WeatherApp reuires your location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "WeatherApp requires your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weatherapp require your location";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -337,8 +368,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Yanish.Weather;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = yanish.weather;
+				PRODUCT_BUNDLE_IDENTIFIER = Yanish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
