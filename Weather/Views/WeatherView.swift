@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WeatherView: View {
+    @State var showNotificationSettingsUI = false
+
+
     var weather: ResponseBody
     
     var body: some View {
@@ -17,9 +20,29 @@ struct WeatherView: View {
                     Text(weather.name)
                         .bold().font(.title)
                     
-                    Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
-                        .fontWeight(.light)
+                    HStack {
+                        Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
+                            .fontWeight(.light)
+                        Spacer()
+                        
+                        Button(
+                          action: {
+                            // 1
+                            NotificationManager.shared.requestAuthorization { granted in
+                              // 2
+                              if granted {
+                                showNotificationSettingsUI = true
+                              }
+                            }
+                          },
+                          label: {
+                            Image(systemName: "bell")
+                                  .font(.largeTitle)
+                                  .accentColor(.white)
+                          })
+                    }
                 }
+                
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
@@ -99,3 +122,5 @@ struct WeatherView_Previews: PreviewProvider {
         WeatherView(weather: previewWeather)
     }
 }
+
+
