@@ -26,15 +26,6 @@ struct NotificationCenterView: View {
             setting: "Authorization Status",
             enabled: notificationManager.settings?.authorizationStatus == UNAuthorizationStatus.authorized)
           CenterRowView(
-            setting: "Show in Notification Center",
-            enabled: notificationManager.settings?.notificationCenterSetting == .enabled)
-          CenterRowView(
-            setting: "Sound Enabled?",
-            enabled: notificationManager.settings?.soundSetting == .enabled)
-          CenterRowView(
-            setting: "Badges Enabled?",
-            enabled: notificationManager.settings?.badgeSetting == .enabled)
-          CenterRowView(
             setting: "Alerts Enabled?",
             enabled: notificationManager.settings?.alertSetting == .enabled)
           CenterRowView(
@@ -46,12 +37,11 @@ struct NotificationCenterView: View {
           CenterRowView(
             setting: "Critical Alerts?",
             enabled: notificationManager.settings?.criticalAlertSetting == .enabled)
-          CenterRowView(
-            setting: "Siri Announcement?",
-            enabled: notificationManager.settings?.announcementSetting == .enabled)
+          
         }
       }
     }
+
   }
 }
 
