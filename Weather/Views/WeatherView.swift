@@ -40,6 +40,10 @@ struct WeatherView: View {
                                   .font(.largeTitle)
                                   .accentColor(.white)
                           })
+                        .padding(.trailing)
+                        .sheet(isPresented: $showNotificationSettingsUI) {
+                            NotificationCenterView()
+                        }
                     }
                 }
                 
