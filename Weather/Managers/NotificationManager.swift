@@ -9,7 +9,6 @@ import Foundation
 import UserNotifications
 import SwiftUI
 
-
 class NotificationManager: ObservableObject {
     static let shared = NotificationManager()
     @Published var settings: UNNotificationSettings?
@@ -32,3 +31,5 @@ class NotificationManager: ObservableObject {
         }
     }
 }
+
+

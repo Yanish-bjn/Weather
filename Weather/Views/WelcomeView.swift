@@ -11,7 +11,6 @@ import UserNotifications
 
 struct WelcomeView: View {
     @EnvironmentObject var locationManager: LocationManager
-    @EnvironmentObject var notificationManager: NotificationManager
 
     
     var body: some View {
@@ -30,7 +29,6 @@ struct WelcomeView: View {
             LocationButton(.shareCurrentLocation){
                 locationManager.requestLocation()
             }
-            
             .cornerRadius(30)
             .symbolVariant(.fill)
             .foregroundColor(.white)
