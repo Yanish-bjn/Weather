@@ -22,6 +22,7 @@
 		9CB1A42B28ED6D72003C9ED3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1A42A28ED6D71003C9ED3 /* NotificationManager.swift */; };
 		9CB1A42D28F6CAF8003C9ED3 /* Apikeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CB1A42C28F6CAF8003C9ED3 /* Apikeys.plist */; };
 		9CD19B7D29094575006680C0 /* NotificationCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD19B7C29094575006680C0 /* NotificationCenterView.swift */; };
+		9CD19B7F291006F8006680C0 /* InformationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD19B7E291006F8006680C0 /* InformationNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9CB1A42A28ED6D71003C9ED3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		9CB1A42C28F6CAF8003C9ED3 /* Apikeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Apikeys.plist; sourceTree = "<group>"; };
 		9CD19B7C29094575006680C0 /* NotificationCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationCenterView.swift; path = ../../NotificationCenterView.swift; sourceTree = "<group>"; };
+		9CD19B7E291006F8006680C0 /* InformationNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				9C9504CC28E8526F00FF919A /* LocationManager.swift */,
 				9C9504D528E875B500FF919A /* WeatherManager.swift */,
 				9CB1A42A28ED6D71003C9ED3 /* NotificationManager.swift */,
+				9CD19B7E291006F8006680C0 /* InformationNotification.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9504CD28E8526F00FF919A /* LocationManager.swift in Sources */,
+				9CD19B7F291006F8006680C0 /* InformationNotification.swift in Sources */,
 				9C598BA528E8956F009E57F2 /* WeatherRow.swift in Sources */,
 				9CD19B7D29094575006680C0 /* NotificationCenterView.swift in Sources */,
 				9C6F32C028DF1C1E00BB0FC5 /* ContentView.swift in Sources */,

@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import NotificationCenter
+import UserNotifications
 
 struct NotificationCenterView: View {
   @ObservedObject var notificationManager = NotificationManager.shared
+    @ObservedObject var informationNotifiation = InformationNotification.shared
+
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -25,12 +29,7 @@ struct NotificationCenterView: View {
                         
                         Button(
                           action: {
-                            // 1
-                            NotificationManager.shared.requestAuthorization { granted in
-                              // 2
-                              if granted {
-                              }
-                            }
+                              InformationNotification.shared.sendNotification()
                           },
                           label: {
                             Image(systemName: "info.circle")
