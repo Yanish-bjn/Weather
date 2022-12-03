@@ -30,7 +30,7 @@ class WeatherManager {
     }
 }
 
-// Model of the response body we get from calling the OpenWeather API
+// Model of the response body we get from calling the OpeWeather API
 struct ResponseBody: Decodable {
     var coord: CoordinatesResponse
     var weather: [WeatherResponse]

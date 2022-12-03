@@ -46,12 +46,7 @@ struct NotificationCenterView: View {
                         
                         Button(
                           action: {
-                            // 1
-                            NotificationManager.shared.requestAuthorization { granted in
-                              // 2
-                              if granted {
-                              }
-                            }
+                              InformationNotification.shared.climat_critique()
                           },
                           label: {
                             Image(systemName:"cloud.bolt.rain.fill")
@@ -68,12 +63,7 @@ struct NotificationCenterView: View {
                         
                         Button(
                           action: {
-                            // 1
-                            NotificationManager.shared.requestAuthorization { granted in
-                              // 2
-                              if granted {
-                              }
-                            }
+                              InformationNotification.shared.info_pluie()
                           },
                           label: {
                             Image(systemName: "cloud.rain")
@@ -90,12 +80,7 @@ struct NotificationCenterView: View {
                         
                         Button(
                           action: {
-                            // 1
-                            NotificationManager.shared.requestAuthorization { granted in
-                              // 2
-                              if granted {
-                              }
-                            }
+                              InformationNotification.shared.info_soleil()
                           },
                           label: {
                             Image(systemName:"star.square")

@@ -12,7 +12,7 @@ struct WeatherView: View {
 
 
     var weather: ResponseBody
-    
+        
     var body: some View {
         ZStack(alignment: .leading) {
             VStack {
