@@ -42,7 +42,7 @@ struct WeatherView: View {
                           })
                         .padding(.trailing)
                         .sheet(isPresented: $showNotificationSettingsUI) {
-                            NotificationCenterView()
+                            NotificationCenterView(weather: previewWeather)
                         }
                     }
                 }

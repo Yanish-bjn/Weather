@@ -17,7 +17,6 @@ class WeatherManager {
         // Replace YOUR_API_KEY in the link below with your own
         guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(api)&units=metric") else { fatalError("Missing URL") }
 
-
         let urlRequest = URLRequest(url: url)
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -37,6 +36,7 @@ struct ResponseBody: Decodable {
     var main: MainResponse
     var name: String
     var wind: WindResponse
+    var sys: SysResponse
 
     struct CoordinatesResponse: Decodable {
         var lon: Double
@@ -63,6 +63,12 @@ struct ResponseBody: Decodable {
         var speed: Double
         var deg: Double
     }
+    
+    struct SysResponse: Decodable{
+        var sunrise: Double
+        var sunset: Double
+    }
+    
 }
 
 extension ResponseBody.MainResponse {

@@ -18,11 +18,9 @@ class InformationNotification: ObservableObject  {
         
     func sendNotification() {
         
-        var weather: ResponseBody?
-
             let notificationContent = UNMutableNotificationContent()
             notificationContent.title = "Bilan de la journée"
-        notificationContent.body = "Aujourd'hui, il fera un minimum de \(String(describing: weather?.name))"
+        notificationContent.body = "Aujourd'hui, il fera un minimum de ..."
             notificationContent.badge = NSNumber(value: 3)
             
             if let url = Bundle.main.url(forResource: "dune",
