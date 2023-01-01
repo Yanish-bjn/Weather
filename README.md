@@ -2,11 +2,11 @@
 API openweathermap
 
 <h4>Table de matière :</h4>
-<h3>Introduction</h3>
-<h3>Partie 1 : Technologie</h3>
-<h3>Partie 2 : Déroulement</h3>
-<h3>Partie 3 : Tableau d'avancement</h3>
-<h3>Partie 4 : Difficulté</h3>
+<h3><strong>Introduction</h3>
+<h3><strong>Partie 1 : Technologie</h3></strong>
+<h3><strong>Partie 2 : Déroulement</h3></strong>
+<h3><strong>Partie 3 : Tableau d'avancement</h3></strong>
+<h3><strong>Partie 4 : Difficulté</h3></strong>
 
 <h3><strong>Introduction :</h3></strong>
 Ce projet logiciel consiste à mettre en place une application météorologique et ceux en utilisant des données en provenance d'une API spécialisée 
