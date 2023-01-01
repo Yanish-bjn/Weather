@@ -1,7 +1,7 @@
 # Weather
 API openweathermap
 
-<h4>Table de matière :</h4>
+<h2>Table de matière :</h2>
 <h3><strong>Introduction</h3>
 <h3><strong>Partie 1 : Technologie</h3></strong>
 <h3><strong>Partie 2 : Déroulement</h3></strong>
