@@ -118,7 +118,7 @@ struct NotificationCenterView: View {
 
                               let notificationContent = UNMutableNotificationContent()
                               notificationContent.title = "Information pluie"
-                              notificationContent.body = "Bonjour"
+                              notificationContent.body = "Attention aujourd'hui à \(String(describing: weather.name)) aucun milimètre d'eau n'est attendu, cependant la pression de l'air reste elever avec \(String(describing: weather.main.pressure.roundDouble() + " N/m²")) ce qui peut risqué l'apparition d'averse"
                               notificationContent.badge = NSNumber(value: 3)
                               
                               if let url = Bundle.main.url(forResource: "dune",
