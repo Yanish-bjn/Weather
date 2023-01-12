@@ -11,7 +11,6 @@ import UserNotifications
 
 struct NotificationCenterView: View {
   @ObservedObject var notificationManager = NotificationManager.shared
-    @ObservedObject var informationNotifiation = InformationNotification.shared
 
     var weather: ResponseBody
 
@@ -46,7 +45,7 @@ struct NotificationCenterView: View {
                                   }
                               }
                               
-                              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7,
                                                                               repeats: false)
                               let request = UNNotificationRequest(identifier: "Bilan de la journée",
                                                                   content: notificationContent,
@@ -88,7 +87,7 @@ struct NotificationCenterView: View {
                                   }
                               }
                               
-                              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7,
                                                                               repeats: false)
                               let request = UNNotificationRequest(identifier: "Climat critique de la journée",
                                                                   content: notificationContent,
@@ -130,7 +129,7 @@ struct NotificationCenterView: View {
                                   }
                               }
                               
-                              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                              let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7,
                                                                               repeats: false)
                               let request = UNNotificationRequest(identifier: "Information pluie de la journée",
                                                                   content: notificationContent,
@@ -187,7 +186,7 @@ struct NotificationCenterView: View {
                                     }
                                 }
                                 
-                                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7,
                                                                                 repeats: false)
                                 let request = UNNotificationRequest(identifier: "Information ensoleillement de la journée",
                                                                     content: notificationContent,
