@@ -31,10 +31,21 @@ struct WeatherView: View {
                             NotificationManager.shared.requestAuthorization { granted in
                                 
                                 let userNotificationCenter = UNUserNotificationCenter.current()
-
+                                
+                                let tempmin = (weather.main.tempMin.roundDouble() as NSString).integerValue
+                                let tempmax = (weather.main.tempMax.roundDouble() as NSString).integerValue
+                                
                                 let notificationContent = UNMutableNotificationContent()
                                 notificationContent.title = "Bilan de la journée"
-                            notificationContent.body = "Aujourd'hui, il fera un minimum de \(weather.main.tempMin.roundDouble() + "°") avec un pique de tempeérature à \(weather.main.tempMax.roundDouble() + "°")"
+                                if (tempmin <= 5) {
+                                    notificationContent.body = "Attention aujourd'hui les températures seront inférieurs à 5° avec \(weather.main.temp_min.roundDouble() + "° en matinée") couvrez vous bien !"
+                                }
+                                else if (tempmax >= 28){
+                                    notificationContent.body = "Canicule, attention aujourd'hui les températures seront très chaudes avec \(weather.main.temp_max.roundDouble() + "°") hydratez vous bien !"
+                                }
+                                else {
+                                    notificationContent.body = "Aujourd'hui, pas de risque particulier, il fera un minimum de \(weather.main.temp_min.roundDouble() + "°") avec un pique de température à \(weather.main.temp_max.roundDouble() + "°")"
+                                }
                                 notificationContent.badge = NSNumber(value: 3)
                                 
                                 if let url = Bundle.main.url(forResource: "dune",
@@ -61,9 +72,21 @@ struct WeatherView: View {
                                 
                                 let userNotificationCenter2 = UNUserNotificationCenter.current()
                                 
+                                let wind_speed = (weather.wind.speed.roundDouble() as NSString).integerValue
+                                
                                 let notificationContent2 = UNMutableNotificationContent()
                                 notificationContent2.title = "Climat critique"
-                                notificationContent2.body = "Attention aujourd'hui fort risque de vent avec des vents allant jusqu'a \(String(describing: weather.wind.speed.roundDouble() + "m/s")) on notera également un taux d'humidité éléver de \(String(describing: weather.main.humidity.roundDouble() + "%"))"
+                                
+                                if (wind_speed >= 10 && wind_speed < 20) {
+                                    notificationContent2.body = "Attention aujourd'hui fort risque de vent pouvant être violant, avec des brises allant jusqu'a \(weather.wind.speed.roundDouble() + "m/s")"
+                                }
+                                else if (wind_speed >= 20 && wind_speed < 40){
+                                    notificationContent2.body = "Attention aujourd'hui risque de tempête, restez chez vous de préference le soufle sera de \(weather.wind.speed.roundDouble() + "m/s")"
+                                }
+                                else {
+                                    notificationContent2.body = "Aujourd'hui très peu de vent à siganler, la brise sera de \(weather.wind.speed.roundDouble() + "m/s"), cependant restez prudent et couvrez vous bien."
+                                }
+                                
                                 notificationContent2.badge = NSNumber(value: 3)
                                 
                                 if let url2 = Bundle.main.url(forResource: "dune",
@@ -81,7 +104,7 @@ struct WeatherView: View {
                                                                     content: notificationContent2,
                                                                     trigger: trigger2)
                                 
-                                userNotificationCenter.add(request2) { (error) in
+                                userNotificationCenter2.add(request2) { (error) in
                                     if let error = error {
                                         print("Notification Error: ", error)
                                     }
@@ -89,9 +112,21 @@ struct WeatherView: View {
                                 
                                 let userNotificationCenter3 = UNUserNotificationCenter.current()
 
+                                let humidity = (weather.main.humidity.roundDouble() as NSString).integerValue
+
                                 let notificationContent3 = UNMutableNotificationContent()
                                 notificationContent3.title = "Information pluie"
-                                notificationContent3.body = "Attention aujourd'hui à \(String(describing: weather.name)) aucun milimètre d'eau n'est attendu, cependant la pression de l'air reste elever avec \(String(describing: weather.main.pressure.roundDouble() + " N/m²")) ce qui peut risqué l'apparition d'averse"
+                                
+                                if (humidity <= 100 && humidity >= 70){
+                                    notificationContent3.body = "Attention aujourd'hui à \(weather.name) le taux d'humidité sera très élever avec \(weather.main.humidity.roundDouble() + "% d'humidité"), il y a aura donc de forte pluie de prévue, n'oubliez pas votre parapluie"
+                                }
+                                else if (humidity < 70 && humidity >= 40){
+                                    notificationContent3.body = "Attention aujourd'hui à \(weather.name) le taux d'humidité sera moyennement haut avec \(weather.main.humidity.roundDouble() + "% d'humidité"), attention des petites pluies sont prévue."
+                                }
+                                else {
+                                    notificationContent3.body = "Aujourd'hui à \(weather.name) aucun milimètre d'eau n'est attendu, le taux d'humidité sera faible avec \(weather.main.humidity.roundDouble() + "% d'humidité")"
+                                }
+                                
                                 notificationContent3.badge = NSNumber(value: 3)
                                 
                                 if let url3 = Bundle.main.url(forResource: "dune",
@@ -134,7 +169,7 @@ struct WeatherView: View {
 
                                 let notificationContent4 = UNMutableNotificationContent()
                                 notificationContent4.title = "Information ensoleillement"
-                                notificationContent4.body = "Aujourd'hui, le soliel ce lévera à \(String(describing: strDate + "h")), en fin de journée le soleil ce couchera à \(String(describing: strDate2 + "h"))"
+                                notificationContent4.body = "Aujourd'hui, le soliel ce lévera à \(String(describing: strDate + "h")) et en fin de journée le soleil ce couchera à \(String(describing: strDate2 + "h"))"
                                 notificationContent4.badge = NSNumber(value: 3)
                                 
                                 if let url4 = Bundle.main.url(forResource: "dune",
@@ -171,7 +206,8 @@ struct WeatherView: View {
                           })
                         .padding(.trailing)
                         .sheet(isPresented: $showNotificationSettingsUI) {
-                            NotificationCenterView(weather: previewWeather)
+                            NotificationCenterView(weather: weather)
+
                         }
                     }
                 }

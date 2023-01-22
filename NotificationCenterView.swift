@@ -30,10 +30,21 @@ struct NotificationCenterView: View {
                         Button(
                           action: {
                               let userNotificationCenter = UNUserNotificationCenter.current()
-
+                              
+                              let tempmin = (weather.main.tempMin.roundDouble() as NSString).integerValue
+                              let tempmax = (weather.main.tempMax.roundDouble() as NSString).integerValue
+                              
                               let notificationContent = UNMutableNotificationContent()
                               notificationContent.title = "Bilan de la journée"
-                          notificationContent.body = "Aujourd'hui, il fera un minimum de \(weather.main.tempMin.roundDouble() + "°") avec un pique de tempeérature à \(weather.main.tempMax.roundDouble() + "°")"
+                              if (tempmin <= 5) {
+                                  notificationContent.body = "Attention aujourd'hui les températures seront inférieurs à 5° avec \(weather.main.temp_min.roundDouble() + "° en matinée") couvrez vous bien !"
+                              }
+                              else if (tempmax >= 28){
+                                  notificationContent.body = "Canicule, attention aujourd'hui les températures seront très chaudes avec \(weather.main.temp_max.roundDouble() + "°") hydratez vous bien !"
+                              }
+                              else {
+                                  notificationContent.body = "Aujourd'hui, pas de risque particulier, il fera un minimum de \(weather.main.temp_min.roundDouble() + "°") avec un pique de température à \(weather.main.temp_max.roundDouble() + "°")"
+                              }
                               notificationContent.badge = NSNumber(value: 3)
                               
                               if let url = Bundle.main.url(forResource: "dune",
@@ -71,11 +82,24 @@ struct NotificationCenterView: View {
                         
                         Button(
                           action: {
+                              
                               let userNotificationCenter = UNUserNotificationCenter.current()
+                              
+                              let wind_speed = (weather.wind.speed.roundDouble() as NSString).integerValue
                               
                               let notificationContent = UNMutableNotificationContent()
                               notificationContent.title = "Climat critique"
-                              notificationContent.body = "Attention aujourd'hui fort risque de vent avec des vents allant jusqu'a \(String(describing: weather.wind.speed.roundDouble() + "m/s")) on notera également un taux d'humidité éléver de \(String(describing: weather.main.humidity.roundDouble() + "%"))"
+                              
+                              if (wind_speed >= 10 && wind_speed < 20) {
+                                  notificationContent.body = "Attention aujourd'hui fort risque de vent pouvant être violant, avec des brises allant jusqu'a \(weather.wind.speed.roundDouble() + "m/s")"
+                              }
+                              else if (wind_speed >= 20 && wind_speed < 40){
+                                  notificationContent.body = "Attention aujourd'hui risque de tempête, restez chez vous de préference le soufle sera de \(weather.wind.speed.roundDouble() + "m/s")"
+                              }
+                              else {
+                                  notificationContent.body = "Aujourd'hui très peu de vent à siganler, la brise sera de \(weather.wind.speed.roundDouble() + "m/s"), cependant restez prudent et couvrez vous bien."
+                              }
+                              
                               notificationContent.badge = NSNumber(value: 3)
                               
                               if let url = Bundle.main.url(forResource: "dune",
@@ -115,9 +139,21 @@ struct NotificationCenterView: View {
                           action: {
                               let userNotificationCenter = UNUserNotificationCenter.current()
 
+                              let humidity = (weather.main.humidity.roundDouble() as NSString).integerValue
+
                               let notificationContent = UNMutableNotificationContent()
                               notificationContent.title = "Information pluie"
-                              notificationContent.body = "Attention aujourd'hui à \(String(describing: weather.name)) aucun milimètre d'eau n'est attendu, cependant la pression de l'air reste elever avec \(String(describing: weather.main.pressure.roundDouble() + " N/m²")) ce qui peut risqué l'apparition d'averse"
+                              
+                              if (humidity <= 100 && humidity >= 70) {
+                                  notificationContent.body = "Attention aujourd'hui à \(weather.name) le taux d'humidité sera très élever avec \(weather.main.humidity.roundDouble() + "% d'humidité"), il y a aura donc de forte pluie de prévue, n'oubliez pas votre parapluie"
+                              }
+                              else if (humidity < 70 && humidity >= 40){
+                                  notificationContent.body = "Attention aujourd'hui à \(weather.name) le taux d'humidité sera moyennement haut avec \(weather.main.humidity.roundDouble() + "% d'humidité"), attention des petites pluies sont prévue."
+                              }
+                              else {
+                                  notificationContent.body = "Aujourd'hui à \(weather.name) aucun milimètre d'eau n'est attendu, le taux d'humidité sera faible avec \(weather.main.humidity.roundDouble() + "% d'humidité")"
+                              }
+                              
                               notificationContent.badge = NSNumber(value: 3)
                               
                               if let url = Bundle.main.url(forResource: "dune",
@@ -174,7 +210,7 @@ struct NotificationCenterView: View {
 
                                 let notificationContent = UNMutableNotificationContent()
                                 notificationContent.title = "Information ensoleillement"
-                                notificationContent.body = "Aujourd'hui, le soliel ce lévera à \(String(describing: strDate + "h")), en fin de journée le soleil ce couchera à \(String(describing: strDate2 + "h"))"
+                                notificationContent.body = "Aujourd'hui, le soliel ce lévera à \(String(describing: strDate + "h")) et en fin de journée le soleil ce couchera à \(String(describing: strDate2 + "h"))"
                                 notificationContent.badge = NSNumber(value: 3)
                                 
                                 if let url = Bundle.main.url(forResource: "dune",
