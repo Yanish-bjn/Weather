@@ -9,6 +9,7 @@ API openweathermap
  <li><h3><strong>Déroulement</h3></strong></li>
  <li><h3><strong>Tableau d'avancement</h3></strong></li>
  <li><h3><strong>Difficulté</h3></strong></li>
+ <li><h3><strong>Fonctionnement</h3></strong></li>
 </ol>
 
 <h3><strong>Introduction :</h3></strong>
@@ -29,6 +30,7 @@ la création de notre application :<p>
  <strong><ul> - Etape 3 : Conception.</ul></strong>
  <strong><ul> - Etape 4 : Création de contenu.</ul></strong>
  <strong><ul> - Etape 5 : Développement.</ul></strong>
+
 <p>
 Ces 5 étapes ont été essentielles pour le déroulement de notre application. En effet, la première phase consistait à la découverte du langage swift ainsi
 que des différentes API permettant de récupérer des informations météorologiques. La deuxième phase a été très importante puisqu'elle nous a permis
@@ -59,4 +61,5 @@ une fois payante et qui possède énormément de fonctionnalités comme par exem
 Comme vous avez pu le constater les principales difficultés concerne principalement l'exploitation de l'API mais sinon dans la globalité 
 le projet c'est très bien dérouler.
 
-
+<strong><h3>Fonctionnement :</h3></strong>
+La prise en main de l'application est très simple, mais require certaines autorisations. En effet en lançant l'application, vous tomberez sur une page d'accueil, sur laquelle se trouve un bouton. Dès lors que vous cliquerez sur le bouton, une petite fenêtre popup apparaîtra sur laquelle on vous demandera l'autorisation d'utiliser votre localisation. Dès lors que vous acceptez, vous cliquer à nouveau sur le même bouton et vous pourriez accéder aux fonctionalités de l'application. Sur la page principale, vous verrez de nombreuses indications et informations dont la date du jour, votre ville, la température actuelle, la description du temps, la température minimum et maximum, la vitesse du vent ainsi que le pourcentage d'humidité. En plus de ses diffèrentes informations vous trouverez également une cloche qui est un bouton, dès lors que vous cliquez sur ce bouton une nouvelle fenêtre pop-up apparaîtra et vous demandera l'autorisation de vous envoyer des notifications. À partir du moment où vous accepter l'envoie des notifications par le système, vous recevrez quotidiennement des notifications (chaque 5 h), ces informations peuvent être du plus basique au plus critique comme une simple brise à un ouragan par exemple. En plus d'accéder à ces notifications, dès lors que vous cliquez à nouveau sur cette cloche, vous pourrait accéder au centre de notification qui est une interface depuis laquelle, vous allez pouvoir vous envoyer une ou plusieurs notifications dans le but de la consulter immédiatement. Sur cette interface vous verrez les titres des notifications chaque titre à un logo associer qui fait office de bouton et qui permet d'actionner l'envoi de notification.
