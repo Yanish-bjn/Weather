@@ -27,6 +27,22 @@ struct WeatherView: View {
                         
                         Button(
                           action: {
+                            //
+                                                   },
+                          label: {
+                            Image(systemName:"magnifyingglass")
+                                  .font(.largeTitle)
+                                  .accentColor(.white)
+                                  .toolbar{
+                                      ToolbarItemGroup(placement: .keyboard) {
+                                          Button("Reset"){
+                                          }.tint(.red)
+                                      }
+                                  }
+                          })
+                        
+                        Button(
+                          action: {
                             // 1
                             NotificationManager.shared.requestAuthorization { granted in
                                 
@@ -84,7 +100,7 @@ struct WeatherView: View {
                                     notificationContent2.body = "Attention aujourd'hui risque de tempête, restez chez vous de préference le soufle sera de \(weather.wind.speed.roundDouble() + "m/s")"
                                 }
                                 else {
-                                    notificationContent2.body = "Aujourd'hui très peu de vent à siganler, la brise sera de \(weather.wind.speed.roundDouble() + "m/s"), cependant restez prudent et couvrez vous bien."
+                                    notificationContent2.body = "Aujourd'hui très peu de vent à signaler, la brise sera de \(weather.wind.speed.roundDouble() + "m/s"), cependant restez prudent et couvrez vous bien."
                                 }
                                 
                                 notificationContent2.badge = NSNumber(value: 3)
