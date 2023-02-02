@@ -46,8 +46,9 @@ des fonctions souhaitées, la mise en place de tests et enfin la réalisation du
 - Récupérer l'autorisation concernant la localisation et l'envoie de notification : 100%
 - Centre de notification : 100%
 - Envoie de notification : 100%
+- Notification critique : 100%
 - filtre sur la polution : 50%
-- ajout d'une map concernant les précipitation : 40 %
+- ajout d'une map concernant les précipitation : 20 %
 - Notification avec design : 20 %
 - Prévision météorologiques : bloquer par l'API
 - Mise en place d'une map pour les averses : bloquer par l'API
